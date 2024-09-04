@@ -1,0 +1,135 @@
+/* *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    /* background: rgb(70, 142, 236); */
+    background-image: url("/src/musculacao.jpg");
+    background-size: cover;
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: auto;
+    height: auto;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+
+}
+
+
+div.container-selects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: initial;
+
+}
+
+.input-name {
+    width: 200px;
+    height: 40px;
+}
+
+select#sex-person {
+    width: 100px;
+    height: 40px;
+}
+
+select#factor {
+    width: 100px;
+    height: 40px;
+}
+
+div.container-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    gap: 20px;
+
+
+}
+
+.button-click {
+    width: 300px;
+    height: 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: chartreuse;
+    color: black;
+    font-size: 30px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+}
+
+div#container-display {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    gap: 20px;
+
+
+}
+
+.inputs::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input.inputs {
+    width: 50px;
+    height: 40px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+
+@media screen and (max-width: 700px){
+    div.container-selects{
+        width: auto;
+        height: auto;
+    }
+    .input-name {
+        font-size: 10px;
+        width: 100px;
+        height: 30px;
+    }
+
+    select#sex-person {
+        font-size: 10px;
+    }
+    
+    select#factor {
+       font-size: 10px;
+    }
+
+    h1.text-display{
+        font-size: 15px;
+    }
+    
+}

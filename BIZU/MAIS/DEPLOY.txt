@@ -1,0 +1,35 @@
+https://railway.app/dashboard (SUBIR BACKEND)
+
+postgresql://postgres:G3c3g3cg*4-Ea-AD-EcE6F-5B4F34D1a@monorail.proxy.rlwy.net:46261/railway
+
+npx sequelize-cli db:migrate
+
+npx sequelize-cli db:migrate:undo:all
+
+mongodb://mongo:Aa3-c6CHccACHh341HGb55DfehBbbDEC@roundhouse.proxy.rlwy.net:20587
+
+https://github.com/edgarsousa21/code-burger-api-master-deploy
+
+-------------------------------------------------------------------------------------------------------------
+API: 
+CONTA 1:
+
+https://code-burger-api-master-deploy-production.up.railway.app/
+
+CONTA 2:
+
+
+-------------------------------------------------------------------------------------------------------------
+
+https://vercel.com/ (SUBIR FRONTEND)
+
+https://github.com/edgarsousa21/code-burger-interface-deploy
+
+SE DER ERRO:
+
+"scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+}
+
+https://code-burger-interface-deploy.vercel.app ==> Endereço da Hamburgueria

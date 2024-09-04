@@ -1,0 +1,396 @@
+JORNADA FULL STACK FRONTEND -> ANOTAÇÕES:
+
+
+M03_0& - &:
+     01 - 
+     02 - 
+     03 - 
+
+MODULO 3:
+M03_01 - Intro - CodeBurger - React:
+     01 - npx create-react-app code-burger-interface (Criar Projeto React)
+     02 -
+     03 -  
+
+M03_02 - Eslint+Prettier no React:
+     01 - yarn add eslint -D (Instalar Eslint na dependencia do projeto)
+          yarn eslint --init (Executar o Eslint)
+     02 - yarn add eslint-plugin-import-helpers -D
+     03 - yarn add eslint-plugin-react-hooks -D
+
+     Prettier: 
+     04 - yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+M03_03 - Estilos Globais com Styled Components: 
+     01 - yarn add styled-components
+     02 - 
+     03 - 
+
+M03_04 - Estilizando a tela de Login: 
+     01 - 
+     02 - 
+     03 - 
+
+M03_05 - Formulário com React Hook Form: 
+     01 - yarn add react-hook-form
+     02 - 
+     03 - 
+
+M03_06 - Validando o formulário de Login: 
+     01 - yarn add @hookform/resolvers yup
+     02 - 
+     03 - 
+
+M03_07 - Conectando Front End com Back End: 
+     01 - yarn add cors (Backend)
+     02 - yarn add axios (FrontEnd)
+     03 - 
+
+M03_08 - Criando componentes de Button | PropTypes: 
+     01 - yarn add prop-types
+     02 - 
+     03 - 
+
+M03_09 - Criando tela de Register: 
+     01 - 
+     02 - 
+     03 - ok
+
+M03_10 - Toast Messages com ReactToastify: 
+     01 - https://fkhadra.github.io/react-toastify/introduction/
+     02 - 
+     03 - ok
+
+M03_11 - React Hook - useContext: 
+     01 - https://pt-br.legacy.reactjs.org/docs/context.html
+     02 - OBS: (Redux faz a mesma coisa que o hooks Context)
+     03 - 
+
+M03_12 - Adicionando informações do usuário no useContext: 
+     01 - 
+     02 - 
+     03 - 
+
+M03_13 - Gravando informações do usuário no Local Storage: 
+     01 - 
+     02 - 
+     03 - 
+
+M03_14 - ATUALIZAÇÃO - React Router Dom v6:
+
+///////////////////////////////////////////////////////
+Para instalar a versão 5, use o seguinte comando:
+yarn add react-router-dom@5
+
+NA VERSÃO "react-router-dom@6" MUDA ALGUNS COMANDOS:
+Switch => Routes
+useHistory => UseNavigate
+history => navigate ( Não precisa usar o push(); )
+component => element
+exact => Não é mais utilizado
+
+obs: yarn add react-router-dom@latest => última Versão
+///////////////////////////////////////////////////////
+
+     01 - 
+     02 - 
+     03 - 
+
+M03_15 - Criando as rotas da aplicação: 
+     01 - yarn add react-router-dom
+     02 - 
+     03 - 
+
+M03_16 - Criando rotas privadas: 
+     01 - 
+     02 - 
+     03 - 
+
+M03_17 - Iniciando tela de Home: 
+     01 - 
+     02 - 
+     03 - 
+
+M03_18 - Adicionando Token JWT as chamadas a API: 
+     01 - 
+     02 - 
+     03 - 
+
+M03_19 - Criando Carrossel de categorias: 
+     01 - yarn add react-elastic-carousel
+     02 - 
+     03 - 
+
+M03_20 - Criando Carrossel de ofertas: Mod03_20-Criando Carrossel de ofertas
+     01 - 
+     02 - 
+     03 - ok
+
+M03_21 - Formatando valores monetários: 
+     01 - 
+     02 - 
+     03 - ok
+
+===================================================================================================================================//
+
+MODULO 4:
+M04_01 - Criando o Menu de seleção de categorias: 
+     01 - 
+     02 -
+     03 -  
+
+M04_02 - Criando Card de Produtos: 
+     01 - 
+     02 -
+     03 - 
+
+M04_03 - Criando filtro por categorias: 
+     01 - 
+     02 -
+     03 - ok
+     
+M04_04 - Alterando exportação e importação de componentes e páginas: 
+     01 - 
+     02 -
+     03 - ok
+     
+M04_05 - Alterando importação dos Hooks: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_06 - Criando a lógica do carrinho: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_07 - Criando estrutura do carrinho: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_08 - Estilizando o carrinho: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_09 - Estilizando botões de quantidade: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_10 - Adicionando e deletando itens do carrinho: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_11 - Atualizando local storage: 
+     01 - 
+     02 -
+     03 -ok
+
+M04_12 - Criando resumo do carrinho: 
+     01 - 
+     02 -
+     03 -ok
+
+M04_13 - Criando lógica do resumo do carrinho: 
+     01 - 
+     02 -
+     03 -ok
+
+M04_14 - Enviando pedido para a API: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_15 - Iniciando o Header da aplicação: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_16 - Finalizando o Header: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_17 - Deslogando o usuário: 
+     01 - 
+     02 -
+     03 - ok
+
+M04_18 - Corrigindo links em categorias e produtos: 
+     01 -   ELVIS OPERATOR -> É UM OPERADOR QUE VERIFICA SE A INFORMAÇÃO EXISTE, 
+            PRA CONTINUAR NAVEGANDO AQUI NO MEU OBJETO. EX: if (state?.category.id)
+            SE O PRODUTO NÃO EXISTIR , ELE DÁ COMO UNDEFINED E SEGUE SEM QUEBRAR 
+            O CÓDIGO.  
+     02 -
+     03 - ok
+
+M04_19 - Adicionando nome do usuário ao Header: Mod04_19-Adicionando nome do usuário ao Header
+     01 - 
+     02 -
+     03 - ok
+
+===================================================================================================================================//
+
+MODULO 5:
+M05_01 - Validando se o usuário é Admin: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_02 - Instalando o MUI na nossa aplicação: 
+     01 - INSTALAÇÃO PADRÃO: Execute um dos seguintes comandos para adicionar o Material UI ao seu projeto:
+
+          --> yarn add @mui/material @emotion/react @emotion/styled
+
+     02 - Material UI usa Emotion como mecanismo de estilo padrão. Se você quiser usar componentes estilizados, 
+          execute um dos seguintes comandos:
+
+          --> yarn add @mui/material @mui/styled-engine-sc styled-components
+
+     03 - Data Grid tabelas:
+
+          --> yarn add @mui/x-data-grid 
+
+          --> yarn add @mui/material 
+
+     04 - https://mui.com/material-ui/react-table/
+
+M05_03 - Começando a construir nossa tabela com MUI: 
+     01 - yarn add @mui/icons-material
+     02 -
+     03 - ok
+
+M05_04 - Continuando a criação da nossa tabela com MUI: 
+     01 - 
+     02 -
+     03 - ok
+ 
+M05_05 - Arrumando nossa tabela: 
+     01 - https://dev.to/kurybr/javascript-entendendo-o-tolocaledatestring-261k ---> Formatar Data e Hora.
+     02 -
+     03 - ok
+     
+M05_06 - Atualizando status do pedido: 
+     01 - https://react-select.com/home ---> Biblioteca para adicionar componente select.
+
+          -->yarn add react-select
+     02 -
+     03 - ok
+
+M05_07 - Criando menu de seleção de status: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_08 - Finalizando lógica do menu e select de status: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_09 - Criando menu lateral: 
+     01 - Icones 
+          Site: https://mui.com/material-ui/material-icons/?query=bag
+          Instalar: yarn add @mui/icons-material
+          Importar: import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+     02 -
+     03 - ok
+
+M05_10 - Criando Logout Admin: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_11 - Iniciando tela de listagem de produtos: 
+     01 - Criar tabela simples:
+          Site: https://mui.com/material-ui/react-table/
+
+     02 -
+     03 - ok
+
+M05_12 - Continuando a tela de listagem de produtos: 
+     01 - ICONES: SITE: 
+          https://mui.com/material-ui/material-icons/?query=check
+
+          import CheckBoxIcon from '@mui/icons-material/CheckBox'; (SIM)
+
+          import CancelIcon from '@mui/icons-material/Cancel'; (NÃO)
+
+          import EditIcon from '@mui/icons-material/Edit'; (EDITAR)
+     02 -
+     03 - ok
+
+M05_13 - Organizando menu e tela de Admin: 
+     01 - ICONES SITE: 
+          https://mui.com/material-ui/material-icons/?query=car
+     
+          import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; (CARRINHO)
+
+     02 -
+     03 - ok
+                          
+M05_14 - Organizando link ativo no menu Admin: 
+     01 - 
+     02 -
+     03 - ok 
+
+M05_15 - Começando tela de adição de novo produto: 
+     01 - ICONES SITE:
+          https://mui.com/material-ui/material-icons/?query=car
+
+          import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+     02 -
+     03 - ok
+
+M05_16 - Criando formulário de adição de produto: 
+     01 - React Hook Form, Site:
+          https://react-hook-form.com/get-started#IntegratingControlledInputs
+
+          --> yarn add react-hook-form
+     02 -
+     03 - ok
+
+ M05_17 - Estilizando formulário de novo produto: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_18 - Criando input de upload de imagem: 
+     01 - SITE ICONE: https://mui.com/material-ui/material-icons/?query=upload
+
+          import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+     02 -
+     03 - ok
+
+M05_19 - Criando select de categorias: 
+     01 - 
+     02 -
+     03 - OK
+
+M05_20 - Validando formulário de criação do produto: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_21 - Corrigindo CSS do formulário de criação do usuário: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_22 - Enviando novo produto para o Back-End: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_23 - Criando tela de editar produtos: 
+     01 - 
+     02 -
+     03 - ok
+
+M05_24 - Finalizando tela de edição de usuários: Mod05_24-Finalizando tela de edição de usuários
+     01 - 
+     02 -
+     03 - ok

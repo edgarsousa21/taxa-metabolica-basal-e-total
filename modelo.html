@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+
+<body>
+    <header>
+        <h1>Taxa Metabólica Basal</h1>
+    </header>
+
+    <section>
+
+        <div class="container-selects">
+            <label>
+                Entre com o seu Nome:
+                <input class="input-name" type="text" placeholder="Digite seu nome">
+            </label>
+
+            <label>
+                Selecione o seu Sexo:
+                <select id="sex-person">
+                    <option value="homem">Masculino</option>
+                    <option value="mulher">Feminino</option>
+                </select>
+            </label>
+
+            <label>
+                Fator de Atividade:
+                <select id="factor">
+                    <option value="leve">Leve - Treina leve</option>
+                    <option value="moderada">Moderada - Menos de 3x por Semana</option>
+                    <option value="alta">Alta - Mais de 3x por Semana</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="container-inputs">
+            <label>
+                Entre com o seu Peso:
+                <input class="inputs input-weight" type="number" min="0" placeholder="0">
+            </label>
+
+            <label>
+                Entre com a sua Altura:
+                <input class="inputs input-height" type="number" min="0" placeholder="0">
+            </label>
+
+            <label>
+                Entre com a sua Idade:
+                <input class="inputs input-age" type="number" min="0" placeholder="0">
+            </label>
+        </div>
+
+        <a href="#container-display">
+            <button class="button-click" onclick="calculeCalories()">Calcular</button>
+        </a>
+
+        <div id="container-display">
+            <h1 class="text-display">Aqui vai ser exibida as respostas!</h1>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; Edgar Raphael de Sousa</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+JORNADA FULL STACK -> ANOTAÇÕES:
+
+MODULO 1:
+M01_01 - Instalando o Yarn:
+--> npm install -g yarn
+
+M01_02 - Iniciando o projeto do codeBurger:
+     01 - npm init -y
+     02 - yarn add express
+     03 - node src/server.js
+
+
+M01_03 - Instalando  Nodemon e Sucrase:
+
+     01 - yarn add nodemon -D   //   npm i nodemon -D
+     02 - yarn dev // npm run dev -----> Executar o Servidor
+     03 - yarn add sucrase -D   //   npm i sucrase -D
+     04 - yarn sucrase-node src/server.js   //   npm sucrase-node src/server.js
+     05 - deleto ("program": "${workspaceFolder}\\src\\server.js") e coloco("protocol": "inspector") no launch.json
+
+M01_04 - Padronizando Nosso Código com Eslint + Prettier:
+     
+     01 - "[javascript]": { "editor.codeActionsOnSave": { "source.fixAll.eslint": true }, },
+          "[javascriptreact]": { "editor.codeActionsOnSave": { "source.fixAll.eslint": true }, },
+          yarn add prettier eslint-config-prettier eslint-plugin-prettier -D  
+
+     02 - yarn add eslint -D  // npm i eslint -D  
+     03 - yarn eslint --init // npx eslint --init  
+     04 - yarn add prettier eslint-config-prettier eslint-plugin-prettier -D 
+          npm i prettier eslint-config-prettier eslint-plugin-prettier -D  
+
+M01_05 - MVC:
+     MODEL: É responsável pela leitura e escrita de dados.
+     VIEW: A camada de interação com o usuário. Ela apenas faz a exibição dos dados.
+     CONTROLER: O responsável por receber todas as requisições do usuário.
+               Controlando qual model usar e qual view será mostrado ao usuário.
+
+
+M01_06 - Conceitos sobre Docker: 
+     
+     01 - Containers (node js, mongodb, postgres) - site Instalação:
+     http://www.docker.com/get-started
+
+
+M01_07 - Resolvendo problema de instalação do Docker no Windows:
+ 
+          01 - Se der problemana inicialização: 
+               - Abrir gerenciador de tarefas (CTRL + SHIFT + ESC)
+               - Clique em Desempenho e CPU e verifique se a virtualizção tá habilitada
+               - Se não, Resolvendo problema de virtualização(http://www.youtube.com/watch?v=uaxXB5h43sc)
+               - Problema 2: WSL (https://docs.microsoft.com/pt-br/windows/wsl/install-win10)
+                  - ETAPA-1 => dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+                  - ETAPA-3 => dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart 
+                  - ETAPA-4 => https://learn.microsoft.com/pt-br/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+                  - ETAPA-5 => wsl --set-default-version 2
+                  - ETAPA-6 => Pelo Microsoft Store, instalar o Ubuntu 20.04 LTS
+
+               -    docker run --name codeburger-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres              
+                    (docker run =>  Iniciar um novo container, 
+                    --name codeburger-postgres => com o nome: "codeburger-postgres", 
+                    -e POSTGRES_PASSWORD=postgres => Criei uma senha com o nome "postgres", 
+                    -d 5432:5432 -d postgres => porta 5432 com a imagem: "postgres")
+
+               - docker ps =>  (Ver os containers que estão executando)
+               - docker ps -a => (Ver todos os containers, até os não executando)
+               - docker stop codeburger-postgres => (Parar o meu container "codeburger-postgres")
+               - docker start codeburger-postgres => (Reiniciar o meu container "codeburger-postgres")
+
+
+M01_08 - Primeiro container Docker:
+
+          01 - docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+               docker run --name <nome-container> -e POSTGRES_PASSWORD=<senha> -p <porta>:<porta> -d <imagem>
+               OBS:
+               docker run -> Subir Novo Container.
+               --name -> Nome do Container.
+               -e POSTGRES_PASSWORD=mysecretpassword -> Define uma Senha.
+               -p <porta>:<porta> -> Porta que a aplicação vai rodar.
+               -d postgres -> Nome da imagem que vai instalar.
+
+               exemplos:
+               docker run --name codeburger-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+               docker run --name edgarsousa -e POSTGRES_PASSWORD=racional21 -p 5434:5434 -d maromba
+
+               		
+          02 - Baixar o Postbird ("https://github.com/Paxa/postbird#download") -> Interface gáfica para ver as tabelas, os dados.	
+               DBeaver Community seria uma outra alternativa ("https://dbeaver.io/download/")
+
+          03 - 	
+
+
+M01_09 - SQL / Sequelize:
+
+          01 - SELECT * from USERS WHERE id = "32"; -> Busca na tabela de usuários, um usuário de id = 32.
+
+          02 - INSERT INTO -> Inserir um novo usuário no banco de dados.
+	          USERS(ID, Email, Password, Name)
+               VALUES('5', contato@rodolfomori.com, '123123', 'Rodolfo')
+
+
+          03 - ORM (Object Relational Mapping -> Técnica de Mapeameto Objeto Relacional)
+               
+               ====> CONVERTE ISSO(SQL):
+               INSERT INTO                                                   
+	          USERS(ID, Email, Password, Name)                                           
+               VALUES('5', contato@rodolfomori.com, '123123', 'Rodolfo')
+                  
+               ====> NISSO(JAVASCRIPT):                                                                          
+               await User.create({
+	          id: v4(),
+               email,
+               password,
+               name
+               })                                              
+                                                                                          
+               ====> CONVERTE ISSO(SQL):
+               SELECT * from USERS WHERE id = "32";
+
+               ====> NISSO(JAVASCRIPT):      
+
+              User.findOne({
+	         where: { id: '32' }
+	         }) 
+
+M01_10 - Instalando o Sequelize:
+
+          01 - yarn add sequelize - Instalar o Sequelize.
+               yarn add sequelize-cli -D -> Biblioteca que vai nos auxiliar (automatizar criando arquivos)
+          02 - yarn add pg pg-hstore -> Para ser possível usar o Sequelize com o Posgres
+
+
+M01_11 - Primeira Migration:
+
+          01 - yarn sequelize migration:create --name=create-users -> Cria uma nova Migration. (20231026140603-create-users.js)
+               yarn sequelize db:migrate -> Rodar minha Migration.
+               yarn sequelize db:migrate:undo -> desfaz a ultima alteração.
+               yarn sequelize db:migrate:undo:all -> Desfaz todas as migrations
+
+          02 -   
+
+
+M01_12 - Criando Model de Usuário:
+
+          01 - criar o arquivo User.js na pasta model. Criação com Classe e Herança
+          02 -     
+
+M01_13 - Configuração do Model de Usuário:
+
+          01 - yarn add uuid
+          02 -     
+
+M01_14 - Criando Controller de Usuário:
+
+          01 - Métodos do Controller: (USADOS POR PADRÃO MVC)
+               - store => Cadastrar/adicionar
+               - index => Listar Vários
+               - show => Listar apenas um
+               - update => Atualizar
+               - delete => Deletar
+
+          02 -       // if (!(await schema.isValid(request.body))) {
+                     //   return response
+                     //     .status(400)
+                     //     .json({ error: 'Make sure Your Data is Correct' })
+                     // }
+
+
+M01_15 - Validando dados com o Yup:
+
+          01 - Instalar o Yup ("https://github.com/jquense/yup") ou o Joi -> yarn add yup
+          02 -  
+
+
+M01_16 - Validando email Duplicado:
+
+          01 - 
+          02 - 
+
+M01_17 - Criando Hash de Senha:
+
+          01 - yarn add bcrypt
+          02 -  
+
+M01_18 - Fazendo o login de usuário:
+
+          01 - 
+          02 -                  
+
+M01_19 - Criando Migrations de Produtos:
+
+          01 - yarn sequelize migration:create --name=create-products -> Cria uma nova Migration. (20231102181450-create-products.js)
+          02 - yarn sequelize db:migrate -> Rodar minha Migration.
+               yarn sequelize db:migrate:undo -> desfaz a ultima alteração.
+               yarn sequelize db:migrate:undo:all -> Desfaz todas as migrations
+
+M01_20 - Criando Controller de Produtos:
+
+          01 - 
+          02 -
+
+M01_21 - Upload de imagens com Multer:
+
+          01 - yarn add multer
+          02 -
+
+M01_22 - Criando Model Produtos:
+
+          01 - 
+          02 -
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+MODULO 2: Continuando a API do CodeBurger - Back-End
+
+M02_01 - Conceitos de JWT:
+          01 - JWT -> json web token.
+          02 - token: ( Header, Payload, Signature )
+
+M02_02 - Configurando token JWT pt.01:
+          01 - yarn add jsonwebtoken -> Biblioteca que vai nos auxiliar com token.
+          02 - 
+
+M02_03 - Configurando token JWT pt.02:
+          01 - https://www.md5hashgenerator.com/
+          02 - 
+
+M02_04 - Entendendo o Relacionamento em Bando de Dados:
+          01 - Aula Teórica...
+          02 -  
+
+M02_05 - Criando tabela de categorias:
+          01 - yarn sequelize migration:create --name=create-categories
+          02 -   
+
+M02_06 - Validando Categoria Repetida:
+          01 - 
+          02 - 
+
+M02_07 - Criando e Excluindo Campos de uma Tabela:
+          01 - yarn sequelize migration:create --name=delete--category-column
+          02 - yarn sequelize migration:create --name=create-category-column
+
+M02_08 - Criando Relacionamento entre Tabelas:
+          01 - 
+          02 - ok
+
+M02_09 - Alterando Controller de Produtos:
+          01 - 
+          02 - ok 
+
+M02_10 - MongoDB - Bancos SQL x Bancos NoSQL:
+          01 - O QUE É UM BANCO DE DADOS RELACIONAL (SQL) ?
+               Banco de dados relacionais como MySQL, PostgreSQL, Oracle e SQLite representam
+               e armazenam dados em tabelas e linhas.
+               As bases de dados relacionais armazenam e fornecem acesso a pontos de dados
+               que poden estar relacionados entre si.
+               Os sistemas de bancos de dados relacionais suportam a relação de várias tabelas 
+               entre si.
+          02 -   
+
+CM02_11 - Criando Conexão com o MongoDB:
+          01 - docker run --name mongo -p 27017:27017 -d -t mongo               
+          02 - yarn add mongoose
+          03 - docker logs <serial> -> ver os detalhes do container    
+
+CM02_12 - Criando Scheme de Pedidos:
+          01 - 
+          02 -  ok
+
+CM02_13 - Criando Controller de Pedidos:
+          01 - 
+          02 - ok 
+
+CM02_14 - Gravando Pedidos no MongoDB:
+          01 - http://www.mongodb.com/pt-br/products/compass   ---> mongodb compass
+          02 -  
+
+CM02_15 - Atualizando Status do Pedido:
+          01 - 
+          02 - ok 
+
+CM02_16 - Validando Usuário Admin:
+          01 - 
+          02 - ok
+
+CM02_17 - Update do Produto:
+          01 - yarn sequelize migration:create --name=create-products-offer-column
+          02 - yarn sequelize db:migrate 
+
+CM02_18 - Update de Categorias:
+          01 - yarn sequelize migration:create --name=create-category-column
+          02 - yarn sequelize db:migrate  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                        
+
+
+             						       
+              
+
+
+
+
+
+
+
+
+
+
