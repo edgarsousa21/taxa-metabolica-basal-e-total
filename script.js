@@ -73,7 +73,7 @@ const macroNutrients = (inputWeight) => {
 const basalMetabolicRate = (inputWeight, inputheight, inputAge) => {
     const sexPerson = document.querySelector('select#sex-person').value // Sexo do Paciente
     const man = ((13.75 * Number(inputWeight)) + (5 * Number(inputheight)) - (6.75 * Number(inputAge)) + 66.5) // Kcal
-    const woman = ((9.56 * Number(inputWeight)) + (1.85 * Number(inputheight)) - (4.68 * Number(inputAge)) + 65.7) // Kcal
+    const woman = ((9.56 * Number(inputWeight)) + (1.85 * Number(inputheight)) - (4.68 * Number(inputAge)) + 65.71) // Kcal
 
 
     if (sexPerson === "homem") {
