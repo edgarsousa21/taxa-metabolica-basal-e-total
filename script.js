@@ -116,9 +116,9 @@ const calculeCalories = () => {
 
 
         respost.innerHTML += `Nome: ${inputName}<br><br>`
-        respost.innerHTML += `Taxa Metabólica Basal: ${bmr} Kcal<br>`
-        respost.innerHTML += `Gasto Energético Total: ${totalEnergyExpenditure} Kcal<br>`
-        respost.innerHTML += `Gasto Total com 400 Kcal de Deficit: ${deficitTotalEnergyExpenditure400} Kcal<br> `
+        respost.innerHTML += `Taxa Metabólica Basal: ${Math.ceil(bmr)} Kcal<br>`
+        respost.innerHTML += `Gasto Energético Total: ${Math.ceil(totalEnergyExpenditure)} Kcal<br>`
+        respost.innerHTML += `Gasto Total com 400 Kcal de Deficit: ${Math.ceil(deficitTotalEnergyExpenditure400)} Kcal<br> `
         respost.innerHTML += `Carboidrato Diário Recomendado: ${Math.ceil(calcCarb)} g<br>`
 
 
