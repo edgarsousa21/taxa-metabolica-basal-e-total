@@ -6,74 +6,83 @@
     <link rel="shortcut icon" href="./src/muscle.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Exercício</title>
+    <title>Queima de Calorias</title>
     <link rel="stylesheet" href="./estilo.css">
 </head>
 
 <body>
     <header>
         <h1>Taxa Metabólica Basal</h1>
+        <h3>Quantidade Necessária de Carboidrato Para o Emagrecimento</h3>
     </header>
 
-    <section>
+
+
+    <div class="container-master">
 
         <div class="container-video">
-            <video controls controlsList="nodownload" muted poster="./src/lala.jpg" width="400" height="400">   
-                <source src="./src/COMO_CALCULAR_SUAS_CALORIAS_DIÁRIAS_(Monte-Sua-Dieta-Você-Mesmo).mp4">
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HpEqSnRWfBU?si=RPVEMBj3F4NObcB7"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-        <div class="container-selects">
-            <label>
-                Entre com o seu Nome:<br><br>
-                <input class="input-name" type="text" placeholder="Digite seu nome">
-            </label>
+        <section>
 
-            <label>
-                Selecione o seu Sexo:<br><br>
-                <select id="sex-person">
-                    <option value="homem">Masculino</option>
-                    <option value="mulher">Feminino</option>
-                </select>
-            </label>
 
-            <label>
-                Fator de Atividade:<br><br>
-                <select id="factor">
-                    <option value="leve">Leve - Treina leve</option>
-                    <option value="moderada">Moderada - Menos de 3x por Semana</option>
-                    <option value="alta">Alta - Mais de 3x por Semana</option>
-                </select>
-            </label>
-        </div>
 
-        <div class="container-inputs">
-            <label>
-                Entre com o seu Peso:<br><br>
-                <input class="inputs input-weight" type="number" min="0" placeholder="0">
-            </label>
+            <div class="container-selects">
+                <label>
+                    Entre com o seu Nome:<br><br>
+                    <input class="input-name" type="text" placeholder="Digite seu nome">
+                </label>
 
-            <label>
-                Entre com a sua Altura:<br><br>
-                <input class="inputs input-height" type="number" min="0" placeholder="0">
-            </label>
+                <label>
+                    Selecione o seu Sexo:<br><br>
+                    <select id="sex-person">
+                        <option value="homem">Masculino</option>
+                        <option value="mulher">Feminino</option>
+                    </select>
+                </label>
 
-            <label>
-                Entre com a sua Idade:<br><br>
-                <input class="inputs input-age" type="number" min="0" placeholder="0">
-            </label>
-        </div>
+                <label>
+                    Fator de Atividade:<br><br>
+                    <select id="factor">
+                        <option value="leve">Leve - Treina leve</option>
+                        <option value="moderada">Moderada - Menos de 3x por Semana</option>
+                        <option value="alta">Alta - Mais de 3x por Semana</option>
+                    </select>
+                </label>
+            </div>
 
-        <a href="#container-display">
-            <button class="button-click" onclick="calculeCalories()">Calcular</button>
-        </a>
+            <div class="container-inputs">
+                <label>
+                    Entre com o seu Peso (Kg):<br><br>
+                    <input class="inputs input-weight" type="number" min="0" placeholder="0">
+                </label>
 
-        <div id="container-display">
-            <h1 class="text-display">Aqui vai ser exibida as respostas!</h1>
+                <label>
+                    Entre com a sua Altura (Cm):<br><br>
+                    <input class="inputs input-height" type="number" min="0" placeholder="0">
+                </label>
 
-        </div>
+                <label>
+                    Entre com a sua Idade:<br><br>
+                    <input class="inputs input-age" type="number" min="0" placeholder="0">
+                </label>
+            </div>
 
-    </section>
+            <a href="#container-display">
+                <button class="button-click" onclick="calculeCalories()">Calcular</button>
+            </a>
+
+            <div id="container-display">
+                <h1 class="text-display">Aqui vai ser exibida as respostas!</h1>
+
+            </div>
+
+        </section>
+    </div>
 
     <footer>
         <p>&copy; Edgar Raphael de Sousa</p>

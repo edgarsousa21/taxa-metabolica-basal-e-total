@@ -25,7 +25,7 @@ G.E.T - 400 = VALOR EM DEFICIT CALORICO = V.D.C KCAL
 MACRONUTRIENTES:
 
 PROTEÍNAS: 2G * PESO(KG) -> 4 KCAL/G 
-GORDURAS: 2G * PESO(KG) -> 9 KCAL/G 
+GORDURAS: 1G * PESO(KG) -> 9 KCAL/G 
 CARBOIDRATOS: XG * PESO(KG) - 4KCAL/G
 
 PESO * 2 * 4 + PESO *2 * 9 = P.G KCAL
@@ -57,16 +57,17 @@ const activityFactor = (factor) => {
 
 const macroNutrients = (inputWeight) => {
     dailyProteinsCalories = Number(inputWeight) * 2 * 4 // Total de Calorias por peso das Proteínas
-    dailyLipidsCalories = Number(inputWeight) * 1 * 9 // Total de Calorias por peso das Gorduras
-    proteinsLipidsCaloriesSum = dailyProteinsCalories + dailyLipidsCalories
+    dailyLipidsCalories = Number(inputWeight) * 1 * 9 // Total de Calorias por peso das Gorduras    
     const respost = document.querySelector('h1.text-display')
 
-    respost.innerHTML = `Proteína Diária Recomendada: ${dailyProteinsCalories / 4} g<br>`
-    respost.innerHTML += `Gordura Diária Recomendada: ${dailyLipidsCalories / 9} g<br><br> `
+    const macro = {
+        proteins: dailyProteinsCalories,
+        lipids: dailyLipidsCalories
+    }
 
 
 
-    return proteinsLipidsCaloriesSum
+    return macro
 
 }
 
@@ -100,25 +101,27 @@ const calculeCalories = () => {
     } else if (inputName && inputWeight && inputheight && inputAge) {
 
         const bmr = basalMetabolicRate(inputWeight, inputheight, inputAge) // Taxa Metabólica Basal
-        macroPL = macroNutrients(inputWeight) // Proteínas e Gorduras
+        const macroPL = macroNutrients(inputWeight) // Proteínas e Gorduras
         const aF = activityFactor(factor) // Fator de Atividade           
         const totalEnergyExpenditure = bmr * aF // Gasto Energético Total
         const deficitTotalEnergyExpenditure400 = totalEnergyExpenditure - 400 // Gasto Energético Total com 400Kcal de Deficit Calórico
-        const totalCarb = deficitTotalEnergyExpenditure400 - macroPL
+        const totalCarb = deficitTotalEnergyExpenditure400 - (macroPL.proteins + macroPL.lipids)
         const calcCarb = carbohydrateCalculation(totalCarb) // Caiboidrato a ser consumido para perder peso
+        console.log(macroPL)
 
 
-
-        console.log(`Taxa Metabólica Basal: ${bmr + macroPL}`)
+        console.log(`Taxa Metabólica Basal: ${bmr + macroPL.proteins + macroPL.lipids}`)
         console.log(`Gasto Energético Total, ${Math.ceil(deficitTotalEnergyExpenditure400)}`)
         console.log(`Total de Carboidratos, ${totalCarb}`)
         console.log(`Caiboidrato a ser consumido para perder peso, ${calcCarb}`)
 
 
-        respost.innerHTML += `Nome: ${inputName}<br><br>`
+        respost.innerHTML = `Nome: ${inputName}<br><br>`
         respost.innerHTML += `Taxa Metabólica Basal: ${Math.ceil(bmr)} Kcal<br>`
         respost.innerHTML += `Gasto Energético Total: ${Math.ceil(totalEnergyExpenditure)} Kcal<br>`
-        respost.innerHTML += `Gasto Total com 400 Kcal de Deficit: ${Math.ceil(deficitTotalEnergyExpenditure400)} Kcal<br> `
+        respost.innerHTML += `Gasto Total com 400 Kcal de Deficit: ${Math.ceil(deficitTotalEnergyExpenditure400)} Kcal<br><br> `
+        respost.innerHTML += `Proteína Diária Recomendada: (2g por Quilo de Peso Corporal) ${macroPL.proteins / 4} g<br>`
+        respost.innerHTML += `Gordura Diária Recomendada: (1g por Quilo de Peso Corporal) ${macroPL.lipids / 9} g<br><br> `
         respost.innerHTML += `Carboidrato Diário Recomendado: ${Math.ceil(calcCarb)} g<br>`
 
 

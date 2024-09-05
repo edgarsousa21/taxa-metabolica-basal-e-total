@@ -5,10 +5,16 @@
 } */
 
 body {
-    /* background: rgb(70, 142, 236); */
-    background-image: url("/src/musculacao.jpg");
-    background-size: cover;
+    background: rgb(70, 142, 236);
+    /* background-size: cover; */
     font: normal 15pt Arial;
+}
+
+div.container-master {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 header {
@@ -17,7 +23,7 @@ header {
 }
 
 section {
-    background-color: #1C4C96;
+    background-color: #E5E5E5;
     border-radius: 10px;
     padding: 15px;
     width: auto;
@@ -55,8 +61,9 @@ select#sex-person {
 }
 
 select#factor {
-    width: 100px;
+    width: 300px;
     height: 40px;
+    margin-bottom: 20px;
 }
 
 div.container-inputs {
@@ -64,6 +71,7 @@ div.container-inputs {
     flex-direction: column;
     align-items: initial;
     gap: 20px;
+
 
 
 }
@@ -88,6 +96,10 @@ div.container-inputs {
 
 }
 
+input.input-age {
+    margin-bottom: 20px;
+}
+
 div#container-display {
     display: flex;
     flex-direction: column;
@@ -104,6 +116,7 @@ div#container-display {
 input.inputs {
     width: 50px;
     height: 40px;
+    font-size: 15px;
 }
 
 footer {
@@ -114,27 +127,46 @@ footer {
 
 
 @media screen and (max-width: 700px) {
+
+    header {
+        width: 477px;
+        height: 160px;
+    }
+
     div.container-selects {
         width: auto;
         height: auto;
     }
 
     .input-name {
-        font-size: 10px;
-        width: 100px;
+        font-size: 15px;
+        width: 300px;
         height: 30px;
     }
 
+    section {
+        padding: 85px;
+        display: flex;
+        gap: 10px;
+    }
+
     select#sex-person {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     select#factor {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     h1.text-display {
         font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    section {
+        padding: 85px;
     }
 
 }
