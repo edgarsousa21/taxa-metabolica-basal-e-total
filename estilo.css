@@ -17,7 +17,7 @@ header {
 }
 
 section {
-    background: white;
+    background-color: #1C4C96;    
     border-radius: 10px;
     padding: 15px;
     width: auto;
@@ -109,11 +109,12 @@ footer {
 }
 
 
-@media screen and (max-width: 700px){
-    div.container-selects{
+@media screen and (max-width: 700px) {
+    div.container-selects {
         width: auto;
         height: auto;
     }
+
     .input-name {
         font-size: 10px;
         width: 100px;
@@ -123,13 +124,13 @@ footer {
     select#sex-person {
         font-size: 10px;
     }
-    
+
     select#factor {
-       font-size: 10px;
+        font-size: 10px;
     }
 
-    h1.text-display{
+    h1.text-display {
         font-size: 15px;
     }
-    
+
 }

@@ -60,12 +60,12 @@ const macroNutrients = (inputWeight) => {
     dailyLipidsCalories = Number(inputWeight) * 1 * 9 // Total de Calorias por peso das Gorduras
     proteinsLipidsCaloriesSum = dailyProteinsCalories + dailyLipidsCalories
     const respost = document.querySelector('h1.text-display')
-    
-    respost.innerHTML = `Proteína Diária Recomendada: ${dailyProteinsCalories} Kcal<br>`
-    respost.innerHTML += `Gordura Diária Recomendada: ${dailyLipidsCalories} Kcal<br><br> `
 
-    
-    
+    respost.innerHTML = `Proteína Diária Recomendada: ${dailyProteinsCalories / 4} g<br>`
+    respost.innerHTML += `Gordura Diária Recomendada: ${dailyLipidsCalories / 9} g<br><br> `
+
+
+
     return proteinsLipidsCaloriesSum
 
 }
@@ -113,15 +113,15 @@ const calculeCalories = () => {
         console.log(`Gasto Energético Total, ${Math.ceil(deficitTotalEnergyExpenditure400)}`)
         console.log(`Total de Carboidratos, ${totalCarb}`)
         console.log(`Caiboidrato a ser consumido para perder peso, ${calcCarb}`)
-        
-        
+
+
         respost.innerHTML += `Nome: ${inputName}<br><br>`
         respost.innerHTML += `Taxa Metabólica Basal: ${bmr} Kcal<br>`
         respost.innerHTML += `Gasto Energético Total: ${totalEnergyExpenditure} Kcal<br>`
-        respost.innerHTML += `Gasto Total com 400Kcal de Deficit: ${deficitTotalEnergyExpenditure400} Kcal<br> ` 
+        respost.innerHTML += `Gasto Total com 400 Kcal de Deficit: ${deficitTotalEnergyExpenditure400} Kcal<br> `
         respost.innerHTML += `Carboidrato Diário Recomendado: ${Math.ceil(calcCarb)} g<br>`
 
-        
+
     }
 
 
