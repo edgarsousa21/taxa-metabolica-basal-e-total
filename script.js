@@ -122,7 +122,7 @@ const calculeCalories = () => {
         respost.innerHTML += `Gasto Total com 400 Kcal de Deficit: ${Math.ceil(deficitTotalEnergyExpenditure400)} Kcal<br><br> `
         respost.innerHTML += `Proteína Diária Recomendada: (2g por Quilo de Peso Corporal) ${macroPL.proteins / 4} g -> ${macroPL.proteins} Kcal <br>`
         respost.innerHTML += `Gordura Diária Recomendada: (1g por Quilo de Peso Corporal) ${macroPL.lipids / 9} g -> ${macroPL.lipids} Kcal<br><br> `
-        respost.innerHTML += `Carboidrato Diário Recomendado: ${Math.ceil(calcCarb)} g<br>`
+        respost.innerHTML += `Carboidrato Diário Recomendado: ${Math.ceil(calcCarb)} g -> ${Math.ceil(calcCarb * 4)} Kcal<br>`
 
 
     }
